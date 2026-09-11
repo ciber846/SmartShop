@@ -1,7 +1,0 @@
-{
-  "name": "Business Website",
-  "description": "A modern corporate business website with services, case studies, interactive project cost calculator, client testimonials, and consultation booking.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
-
