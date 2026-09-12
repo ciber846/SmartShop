@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WearUp BD — Online Shop</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top">🚚 সারা বাংলাদেশে ডেলিভারি • খুচরা ও পাইকারি অর্ডার</div>
+
+<header>
+  <a class="logo" href="#">WearUp <b>BD</b></a>
+  <button onclick="menu()">☰</button>
+  <nav id="nav">
+    <a href="#home">হোম</a><a href="#products">শপ</a><a href="#categories">ক্যাটাগরি</a>
+    <a href="#wholesale">পাইকারি</a><a href="#contact">যোগাযোগ</a>
+  </nav>
+  <button onclick="cartOpen()">🛒 <span id="count">0</span></button>
+</header>
+
+<section id="home" class="hero">
+  <div><small>✨ NEW COLLECTION</small>
+    <h1>স্টাইল, পছন্দ<br><span>আর ভালো দাম</span></h1>
+    <p>WearUp BD-তে খুচরা ও পাইকারি পণ্য অর্ডার করুন। সহজে পণ্য খুঁজুন এবং যোগাযোগ করে অর্ডার নিশ্চিত করুন।</p>
+    <a class="btn" href="#products">এখনই শপ করুন →</a>
+    <a class="btn alt" href="#wholesale">পাইকারি অর্ডার</a>
+  </div>
+  <div class="heroCard">🛍️<h2>WearUp BD</h2><p>আপনার অনলাইন শপ</p></div>
+</section>
+
+<section id="categories" class="wrap sec">
+  <small>SHOP BY CATEGORY</small><h2>ক্যাটাগরি</h2>
+  <div class="cats">
+    <button onclick="setCat('সব')">🛍️<b>সব পণ্য</b></button>
+    <button onclick="setCat('ফ্যাশন')">👕<b>ফ্যাশন</b></button>
+    <button onclick="setCat('দৈনন্দিন')">🏠<b>দৈনন্দিন</b></button>
+    <button onclick="setCat('পাইকারি')">📦<b>পাইকারি</b></button>
+  </div>
+</section>
+
+<section id="products" class="sec products">
+  <div class="wrap">
+    <div class="row"><div><small>FEATURED PRODUCTS</small><h2>জনপ্রিয় পণ্য</h2></div>
+      <input id="search" oninput="render()" placeholder="🔎 পণ্য খুঁজুন...">
+    </div>
+    <div id="grid" class="grid"></div>
+  </div>
+</section>
+
+<section id="wholesale" class="wrap wholesale">
+  <div><small>WHOLESALE</small><h2>বেশি পরিমাণে পণ্য লাগবে?</h2><p>পাইকারি অর্ডারের জন্য সরাসরি যোগাযোগ করুন।</p></div>
+  <a class="btn" href="#contact">পাইকারি অর্ডার করুন</a>
+</section>
+
+<section id="contact" class="sec contact">
+  <div class="wrap contactGrid">
+    <div><small>CONTACT US</small><h2>অর্ডার করতে যোগাযোগ করুন</h2>
+      <p>পণ্যের নাম, পরিমাণ ও ফোন নম্বর পাঠান।</p>
+      <a id="fb" href="https://www.facebook.com/" target="_blank">📘 Facebook Page</a><br>
+      <a id="ph" href="tel:+8801XXXXXXXXX">📞 +880 1XXXXXXXXX</a>
+    </div>
+    <form onsubmit="order(event)">
+      <input id="name" required placeholder="আপনার নাম"><input id="phone" required placeholder="ফোন নম্বর">
+      <input id="item" required placeholder="পণ্যের নাম"><input id="qty" placeholder="পরিমাণ">
+      <textarea id="note" placeholder="অতিরিক্ত তথ্য"></textarea>
+      <button class="btn">WhatsApp-এ অর্ডার পাঠান</button>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap">© <span id="year"></span> WearUp BD • Retail & Wholesale</div></footer>
+
+<aside id="drawer"><button onclick="cartClose()">✕</button><h2>🛒 Cart</h2>
+  <div id="items"></div><b>মোট: <span id="total">৳0</span></b>
+  <button class="btn" onclick="checkout()">Checkout</button>
+</aside>
+<div id="shade" onclick="cartClose()"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
